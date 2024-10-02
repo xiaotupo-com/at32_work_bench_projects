@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "*.cpp": "cpp",
+        "at32f435_437_wk_config.h": "c",
+        "at32f435_437_conf.h": "c",
+        "hash_map": "c",
+        "*.tcc": "c",
+        "deque": "c",
+        "list": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "system_error": "c",
+        "array": "cpp",
+        "string_view": "cpp",
+        "format": "cpp",
+        "initializer_list": "cpp",
+        "span": "cpp",
+        "cstdint": "cpp",
+        "xtp_printf.h": "c",
+        "compare": "cpp",
+        "xtp_common_inc.h": "c",
+        "functional": "cpp",
+        "cstddef": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

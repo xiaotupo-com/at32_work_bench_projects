@@ -232,7 +232,6 @@ void St7789::setLcdAddress(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2) c
 
     sendCommand(0x2a);
     {
-        // uint8_t _data[] = {x1 >> 8, x1 & 0xFF, x2 >> 8, x2 & 0xFF};
         uint8_t _data[4];
         _data[0] = x1 >> 8;
         _data[1] = x1 & 0xFF;
@@ -243,7 +242,6 @@ void St7789::setLcdAddress(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2) c
 
     sendCommand(0x2b);
     {
-        // uint8_t _data[] = {y1 >> 8, y1 & 0xFF, y2 & 0xFF, y2 & 0xFF};
         uint8_t _data[4];
         _data[0] = y1 >> 8;
         _data[1] = y1 & 0xFF;
@@ -360,13 +358,12 @@ void St7789::lcdInit() const
 
 void St7789::clear(uint16_t color) const
 {
-
     uint8_t _color[2];
-    uint16_t i, j;
+    uint32_t i, j;
     setLcdAddress(0, 0, ST7789_WIDTH - 1, ST7789_HEIGHT);
 
     sendCommand(0X2C);
-
+    
     for (i = 0; i < 240; i++)
     {
         for (j = 0; j < 320; j++)
@@ -375,6 +372,7 @@ void St7789::clear(uint16_t color) const
             writeSingleByteData(color);
         }
     }
+    
     displayOn(); /* 开LCD显示 */
 }
 

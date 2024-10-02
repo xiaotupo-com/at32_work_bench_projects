@@ -1,0 +1,235 @@
+{
+  "name": "at32f437ZGT7_LCD_DEMO",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "user",
+        "files": [
+          {
+            "path": "../src/at32f435_437_int.c"
+          },
+          {
+            "path": "../src/at32f435_437_wk_config.c"
+          },
+          {
+            "path": "../src/main.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "firmware",
+        "files": [
+          {
+            "path": "../../libraries/drivers/src/at32f435_437_crm.c"
+          },
+          {
+            "path": "../../libraries/drivers/src/at32f435_437_debug.c"
+          },
+          {
+            "path": "../../libraries/drivers/src/at32f435_437_flash.c"
+          },
+          {
+            "path": "../../libraries/drivers/src/at32f435_437_gpio.c"
+          },
+          {
+            "path": "../../libraries/drivers/src/at32f435_437_misc.c"
+          },
+          {
+            "path": "../../libraries/drivers/src/at32f435_437_pwc.c"
+          },
+          {
+            "path": "../../libraries/drivers/src/at32f435_437_spi.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "cmsis",
+        "files": [
+          {
+            "path": "startup_at32f435_437.s"
+          },
+          {
+            "path": "../../libraries/cmsis/cm4/device_support/system_at32f435_437.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "st7789",
+        "files": [
+          {
+            "path": "../../bsp/ST7789/fonts.c"
+          },
+          {
+            "path": "../../bsp/ST7789/st7789.c"
+          }
+        ],
+        "folders": []
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "miscInfo": {
+    "uid": "48f5c965de1749c184f7b9cfdddb4643"
+  },
+  "targets": {
+    "at32f437ZGT7_LCD_DEMO": {
+      "excludeList": [],
+      "toolchain": "AC6",
+      "compileConfig": {
+        "cpuType": "Cortex-M4",
+        "floatingPointHardware": "single",
+        "scatterFilePath": "",
+        "useCustomScatterFile": false,
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "RAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x60000"
+              },
+              "isChecked": true,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "ROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x8000000",
+                "size": "0x100000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            },
+            {
+              "tag": "IROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "null",
+          "cpuName": "null"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "../../libraries/drivers/inc",
+          "../../libraries/cmsis/cm4/core_support",
+          "../../libraries/cmsis/cm4/device_support",
+          "../inc",
+          "../../bsp/ST7789",
+          ".cmsis/include",
+          "RTE/_at32f437ZGT7_LCD_DEMO"
+        ],
+        "libList": [],
+        "defineList": [
+          "AT32F437ZGT7",
+          "USE_STDPERIPH_DRIVER",
+          "AT32"
+        ]
+      }
+    }
+  },
+  "version": "3.4"
+}

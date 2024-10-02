@@ -35,7 +35,6 @@
 #include "buzzer.h"
 #include <cstring>
 
-
 /* add user code end private includes */
 
 /* private typedef -----------------------------------------------------------*/
@@ -63,7 +62,6 @@ St7789 st7789(LCD_CS_GPIO_PORT, LCD_CS_PIN, LCD_DC_GPIO_PORT, LCD_DC_PIN, LCD_RE
 /* private function prototypes --------------------------------------------*/
 /* add user code begin function prototypes */
 
-
 /* add user code end function prototypes */
 
 /* private user code ---------------------------------------------------------*/
@@ -72,62 +70,61 @@ St7789 st7789(LCD_CS_GPIO_PORT, LCD_CS_PIN, LCD_DC_GPIO_PORT, LCD_DC_PIN, LCD_RE
 /* add user code end 0 */
 
 /**
-  * @brief main function.
-  * @param  none
-  * @retval none
-  */
+ * @brief main function.
+ * @param  none
+ * @retval none
+ */
 int main(void)
 {
-  /* add user code begin 1 */
+    /* add user code begin 1 */
 
     /* add user code end 1 */
 
-  /* system clock config. */
-  wk_system_clock_config();
+    /* system clock config. */
+    wk_system_clock_config();
 
-  /* config periph clock. */
-  wk_periph_clock_config();
+    /* config periph clock. */
+    wk_periph_clock_config();
 
-  /* nvic config. */
-  wk_nvic_config();
+    /* nvic config. */
+    wk_nvic_config();
 
-  /* init dma1 channel1 */
-  wk_dma1_channel1_init();
-  
+    /* init dma1 channel1 */
+    wk_dma1_channel1_init();
 
-  /* init spi1 function. */
-  wk_spi1_init();
+    /* init spi1 function. */
+    wk_spi1_init();
 
-  /* init gpio function. */
-  wk_gpio_config();
+    /* init gpio function. */
+    wk_gpio_config();
 
-  /* add user code begin 2 */
-	delay_init(); // 延时函数优先初始化
-	//delay_ms(1000);
+    /* add user code begin 2 */
+    delay_init(); // 延时函数优先初始化
+                  // delay_ms(1000);
     st7789.lcdInit();
     st7789.clear(LCD_DISP_BLACK);
-	st7789.setBacklight(BlkState::on);
-    
-	st7789.drawRectangle(0, 0, ST7789_WIDTH-1, 26, LCD_DISP_GREEN);
-	st7789.writeString(4, 4, "https://github.com", Font_11x18, LCD_DISP_CHARTREUSE, LCD_DISP_BLACK);
-	//st7789.writeNum(4, 26, num, 5,  Font_11x18, LCD_DISP_CHARTREUSE, LCD_DISP_BLACK);
-	
+    st7789.setBacklight(BlkState::on);
+
+    st7789.drawRectangle(0, 0, ST7789_WIDTH - 1, 26, LCD_DISP_GREEN);
+    st7789.writeString(4, 4, "https://github.com", Font_11x18, LCD_DISP_CHARTREUSE, LCD_DISP_BLACK);
+
     Buzzer buzzer(BUZZER_GPIO_PORT, BUZZER_PIN); // 创建蜂鸣器对象
-	buzzer.on(150, 1000);
-	
+    buzzer.on(150, 1000);
+
     /* add user code end 2 */
 
-  while(1)
-  {
-    /* add user code begin 3 */
-    // st7789.demo();
-	  num++;
-    fnum+= 0.12;
-	  if(num > 99999) num=0;
-	  delay_ms(15);
-	  
-	  st7789.writeNum(strlen("https://github.com")*11 + 10, 4, num, 5, Font_11x18, LCD_DISP_ANTIQUEWHITE, LCD_DISP_BLACK);
-    st7789.writeFloat(4, 30, fnum, 6, Font_11x18, LCD_DISP_ANTIQUEWHITE, LCD_DISP_BLACK);
-    /* add user code end 3 */
-  }
+    while (1)
+    {
+        /* add user code begin 3 */
+        // st7789.demo();
+        num++;
+        fnum += 0.12;
+        if (num > 99999)
+            num = 0;
+        delay_ms(15);
+
+        st7789.writeNum(strlen("https://github.com") * 11 + 10, 4, num, 5, Font_11x18, LCD_DISP_ANTIQUEWHITE, LCD_DISP_BLACK);
+        st7789.writeFloat(4, 30, fnum, 6, Font_11x18, LCD_DISP_ANTIQUEWHITE, LCD_DISP_BLACK);
+        /* add user code end 3 */
+    }
 }

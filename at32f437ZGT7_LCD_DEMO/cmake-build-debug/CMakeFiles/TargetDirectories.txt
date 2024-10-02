@@ -1,2 +1,0 @@
-E:/work/Embedded/AT32/projects/at32_work_bench_projects/at32f437ZGT7_LCD_DEMO/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/work/Embedded/AT32/projects/at32_work_bench_projects/at32f437ZGT7_LCD_DEMO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
